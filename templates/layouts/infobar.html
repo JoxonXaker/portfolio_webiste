@@ -1,5 +1,5 @@
 <div class="art-info-bar">
-{% load static %}
+    {% load static %}
     <!-- menu bar frame -->
     <div class="art-info-bar-frame">
 
@@ -30,9 +30,10 @@
             </div>
             <!-- avatar end -->
             <!-- name -->
-            <h5 class="art-name mb-10"><a href="{% url 'homepage' %}">Artur Carter</a></h5>
+            <h5 class="art-name mb-10"><a href="">{{ user.first_name }} {{ user.last_name }}</a>
+            </h5>
             <!-- post -->
-            <div class="art-sm-text">Front-end Deweloper <br>Ui/UX Designer,</div>
+            <div class="art-sm-text">{% for j in job %}{{ j.profession }}<br>{% endfor %}</div>
         </div>
         <!-- info bar header end -->
 
@@ -45,15 +46,15 @@
                 <ul>
                     <!-- country -->
                     <li>
-                        <h6>Residence:</h6><span>Canada</span>
+                        <h6>Residence:</h6><span>{{ user.place }}</span>
                     </li>
                     <!-- city -->
                     <li>
-                        <h6>City:</h6><span>Toronto</span>
+                        <h6>City:</h6><span>{{ user.address }}</span>
                     </li>
                     <!-- age -->
                     <li>
-                        <h6>Age:</h6><span>26</span>
+                        <h6>Age:</h6><span>{{ user.birth_date }}</span>
                     </li>
                 </ul>
             </div>
@@ -65,29 +66,17 @@
             <!-- language skills -->
             <div class="art-lang-skills p-30-15">
 
-                <!-- skill -->
-                <div class="art-lang-skills-item">
-                    <div id="circleprog1" class="art-cirkle-progress"></div>
-                    <!-- title -->
-                    <h6>French</h6>
-                </div>
-                <!-- skill end -->
+                {% for lang in langs %}
+                    <!-- skill -->
+                    <div class="art-lang-skills-item">
+                        <div id="circleprog{{ lang.pk }}" class="art-cirkle-progress"></div>
+                        <!-- title -->
+                        <h6>{{ lang.language }}</h6>
+                        <p class="lang_degree" style="display: none">{{ lang.degree }}</p>
+                    </div>
+                    <!-- skill end -->
+                {% endfor %}
 
-                <!-- skill -->
-                <div class="art-lang-skills-item">
-                    <div id="circleprog2" class="art-cirkle-progress"></div>
-                    <!-- title -->
-                    <h6>English</h6>
-                </div>
-                <!-- skill end -->
-
-                <!-- skill -->
-                <div class="art-lang-skills-item">
-                    <div id="circleprog3" class="art-cirkle-progress"></div>
-                    <!-- title -->
-                    <h6>Spanish</h6>
-                </div>
-                <!-- skill end -->
 
             </div>
             <!-- language skills end -->
@@ -96,82 +85,28 @@
             <div class="art-ls-divider"></div>
 
             <!-- hard skills -->
-            <div class="art-hard-skills p-30-15">
+            <div class="art-hard-skills p-30-15" id="progress_bar">
 
-                <!-- skill -->
-                <div class="art-hard-skills-item">
-                    <div class="art-skill-heading">
-                        <!-- title -->
-                        <h6>html</h6>
-                    </div>
-                    <!-- progressbar frame -->
-                    <div class="art-line-progress">
-                        <!-- progressbar -->
-                        <div id="lineprog1"></div>
-                    </div>
-                    <!-- progressbar frame end -->
-                </div>
-                <!-- skill end -->
 
-                <!-- skill -->
-                <div class="art-hard-skills-item">
-                    <div class="art-skill-heading">
-                        <!-- title -->
-                        <h6>CSS</h6>
+                {% for spec in specs %}
+                    <!-- skill -->
+                    <div class="art-hard-skills-item">
+                        <div class="art-skill-heading">
+                            <!-- title -->
+                            <h6>{{ spec.special }}</h6>
+                        </div>
+                        <!-- progressbar frame -->
+                        <div class="art-line-progress">
+                            <!-- progressbar -->
+                            <div class="special" id="lineprog{{ spec.pk }}">
+                                <div class="degree" style="display: none">{{ spec.degree }}</div>
+                            </div>
+                        </div>
+                        <!-- progressbar frame end -->
                     </div>
-                    <!-- progressbar frame -->
-                    <div class="art-line-progress">
-                        <!-- progressbar -->
-                        <div id="lineprog2"></div>
-                    </div>
-                    <!-- progressbar frame end -->
-                </div>
-                <!-- skill end -->
+                    <!-- skill end -->
+                {% endfor %}
 
-                <!-- skill -->
-                <div class="art-hard-skills-item">
-                    <div class="art-skill-heading">
-                        <!-- title -->
-                        <h6>Js</h6>
-                    </div>
-                    <!-- progressbar frame -->
-                    <div class="art-line-progress">
-                        <!-- progressbar -->
-                        <div id="lineprog3"></div>
-                    </div>
-                    <!-- progressbar frame end -->
-                </div>
-                <!-- skill end -->
-
-                <!-- skill -->
-                <div class="art-hard-skills-item">
-                    <div class="art-skill-heading">
-                        <!-- title -->
-                        <h6>PHP</h6>
-                    </div>
-                    <!-- progressbar frame -->
-                    <div class="art-line-progress">
-                        <!-- progressbar -->
-                        <div id="lineprog4"></div>
-                    </div>
-                    <!-- progressbar frame end -->
-                </div>
-                <!-- skill end -->
-
-                <!-- skill -->
-                <div class="art-hard-skills-item">
-                    <div class="art-skill-heading">
-                        <!-- title -->
-                        <h6>Wordpress</h6>
-                    </div>
-                    <!-- progressbar frame -->
-                    <div class="art-line-progress">
-                        <!-- progressbar -->
-                        <div id="lineprog5"></div>
-                    </div>
-                    <!-- progressbar frame end -->
-                </div>
-                <!-- skill end -->
 
             </div>
             <!-- language skills end -->
@@ -199,7 +134,8 @@
             <div class="art-links-frame p-15-15">
 
                 <!-- download cv button -->
-                <a href="{% static 'files/resume.docx' %}" class="art-link" download>Download cv <i class="fas fa-download"></i></a>
+                <a href="{% static 'files/resume.docx' %}" class="art-link" download>Download cv <i
+                        class="fas fa-download"></i></a>
 
             </div>
             <!-- links frame end -->

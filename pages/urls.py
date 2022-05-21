@@ -6,16 +6,20 @@ from .views import (
     ArticlesPageView,
     ArticleDetailPageView,
     ProjectsPageView,
-    ProjectDetailPageView
+    ProjectDetailPageView,
+    AuthUserPageView
 )
 
 urlpatterns = [
-    path('', HomePageView.as_view(), name='homepage'),
-    path('contact/', ContactPageView.as_view(), name='contactpage'),
-    path('history/', HistoryPageView.as_view(), name='historypage'),
-    path('articles/', ArticlesPageView.as_view(), name='articlespage'),
-    path('article_detail/', ArticleDetailPageView.as_view(), name='article_detail'),
-    path('projects/', ProjectsPageView.as_view(), name='projectspage'),
-    path('project_detail/', ProjectDetailPageView.as_view(), name='project_detail'),
+    path('', AuthUserPageView, name='auth_user_page'),
+    path('', HomePageView, name='homepage'),
+    path('contact/', ContactPageView, name='contactpage'),
+    path('history/', HistoryPageView, name='historypage'),
+    path('articles/', ArticlesPageView, name='articlespage'),
+    path('article_detail/', ArticleDetailPageView, name='article_detail'),
+    path('projects/', ProjectsPageView, name='projectspage'),
+    path('project_detail/', ProjectDetailPageView, name='project_detail'),
 
 ]
+
+

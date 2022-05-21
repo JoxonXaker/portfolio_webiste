@@ -1,7 +1,4 @@
 {% extends 'base.html' %}
-
-{% block title %}Home{% endblock title %}
-
 {% block content %}
     {% load static %}
     <div class="transition-fade" id="swup">
@@ -29,7 +26,10 @@
                                 <!-- main title -->
                                 <div class="art-banner-title">
                                     <!-- title -->
-                                    <h1 class="mb-15">Discover my Amazing <br>Art Space!</h1>
+{#                                    <h1 class="mb-15">Discover my Amazing <br>Art Space!</h1>#}
+                                    <h3 class="mb-10">{{ user.username }}</h3><br>
+                                    <h5 class="mb-5">{{ user.email }}</h5>
+
                                     <!-- suptitle -->
                                     <div class="art-lg-text art-code mb-25">&lt;<i>code</i>&gt; I build
                                         <span class="txt-rotate" data-period="2000"
@@ -488,7 +488,7 @@
                                         <div class="testimonial-body">
                                             <!-- photo -->
                                             <img class="art-testimonial-face"
-                                                 src="img/testimonials/face-1.jpg" alt="face">
+                                                 src="{% static 'img/testimonials/face-1.jpg' %}" alt="face">
                                             <!-- name -->
                                             <h5>Paul Trueman</h5>
                                             <div class="art-el-suptitle mb-15">Template author</div>
@@ -534,7 +534,7 @@
                                         <div class="testimonial-body">
                                             <!-- photo -->
                                             <img class="art-testimonial-face"
-                                                 src="img/testimonials/face-2.jpg" alt="face">
+                                                 src="{% static 'img/testimonials/face-2.jpg' %}" alt="face">
                                             <!-- name -->
                                             <h5>Paul Trueman</h5>
                                             <div class="art-el-suptitle mb-15">Template author</div>
@@ -581,7 +581,7 @@
                                         <div class="testimonial-body">
                                             <!-- photo -->
                                             <img class="art-testimonial-face"
-                                                 src="img/testimonials/face-3.jpg" alt="face">
+                                                 src="{% static 'img/testimonials/face-3.jpg' %}" alt="face">
                                             <!-- name -->
                                             <h5>Paul Trueman</h5>
                                             <div class="art-el-suptitle mb-15">Template author</div>
@@ -627,7 +627,7 @@
                                         <div class="testimonial-body">
                                             <!-- photo -->
                                             <img class="art-testimonial-face"
-                                                 src="img/testimonials/face-4.jpg" alt="face">
+                                                 src="{% static 'img/testimonials/face-4.jpg' %}" alt="face">
                                             <!-- name -->
                                             <h5>Paul Trueman</h5>
                                             <div class="art-el-suptitle mb-15">Template author</div>
@@ -725,28 +725,28 @@
                     <!-- col -->
                     <div class="col-6 col-lg-3">
                         <!-- brand -->
-                        <img class="art-brand" src="img/brands/1.png" alt="brand">
+                        <img class="art-brand" src="{% static 'img/brands/1.png' %}" alt="brand">
                     </div>
                     <!-- col end -->
 
                     <!-- col -->
                     <div class="col-6 col-lg-3">
                         <!-- brand -->
-                        <img class="art-brand" src="img/brands/2.png" alt="brand">
+                        <img class="art-brand" src="{% static 'img/brands/2.png' %}" alt="brand">
                     </div>
                     <!-- col end -->
 
                     <!-- col -->
                     <div class="col-6 col-lg-3">
                         <!-- brand -->
-                        <img class="art-brand" src="img/brands/3.png" alt="brand">
+                        <img class="art-brand" src="{% static 'img/brands/3.png' %}" alt="brand">
                     </div>
                     <!-- col end -->
 
                     <!-- col -->
                     <div class="col-6 col-lg-3">
                         <!-- brand -->
-                        <img class="art-brand" src="img/brands/1.png" alt="brand">
+                        <img class="art-brand" src="{% static 'img/brands/1.png' %}" alt="brand">
                     </div>
                     <!-- col end -->
 
@@ -776,4 +776,6 @@
         <!-- scroll frame end -->
 
     </div>
+    <div class="current-menu-item" style="display: none"><a>Home</a></div>
+    {% static '' %}
 {% endblock %}

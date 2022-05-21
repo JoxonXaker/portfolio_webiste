@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block content %}
 {% load static%}
 <div class="transition-fade" id="swup">
@@ -44,7 +43,7 @@
                         <a data-fancybox="gallery" href="img/blog/2.jpg"
                            class="art-portfolio-item-frame art-horizontal">
                             <!-- img -->
-                            <img src="img/blog/2.jpg" alt="item">
+                            <img src="{% static 'img/blog/2.jpg' %}" alt="item">
                             <!-- zoom icon -->
                             <span class="art-item-hover"><i class="fas fa-expand"></i></span>
                         </a>
@@ -206,7 +205,7 @@
                                     <!-- post cover -->
                                     <a href="/blog-post.html" class="art-port-cover">
                                         <!-- img -->
-                                        <img src="img/blog/1.jpg" alt="blog post">
+                                        <img src="{% static 'img/blog/1.jpg' %}" alt="blog post">
                                     </a>
                                     <!-- post cover end -->
                                     <!-- post description -->
@@ -237,7 +236,7 @@
                                     <!-- post cover -->
                                     <a href="/blog-post.html" class="art-port-cover">
                                         <!-- img -->
-                                        <img src="img/blog/2.jpg" alt="blog post">
+                                        <img src="{% static 'img/blog/2.jpg' %}" alt="blog post">
                                     </a>
                                     <!-- post cover end -->
                                     <!-- post description -->
@@ -268,7 +267,7 @@
                                     <!-- post cover -->
                                     <a href="/blog-post.html" class="art-port-cover">
                                         <!-- img -->
-                                        <img src="img/blog/3.jpg" alt="blog post">
+                                        <img src="{% static 'img/blog/3.jpg' %}" alt="blog post">
                                     </a>
                                     <!-- post cover end -->
                                     <!-- post description -->
@@ -299,7 +298,7 @@
                                     <!-- post cover -->
                                     <a href="/blog-post.html" class="art-port-cover">
                                         <!-- img -->
-                                        <img src="img/blog/4.jpg" alt="blog post">
+                                        <img src="{% static 'img/blog/4.jpg' %}" alt="blog post">
                                     </a>
                                     <!-- post cover end -->
                                     <!-- post description -->
@@ -330,7 +329,7 @@
                                     <!-- post cover -->
                                     <a href="/blog-post.html" class="art-port-cover">
                                         <!-- img -->
-                                        <img src="img/blog/5.jpg" alt="blog post">
+                                        <img src="{% static 'img/blog/5.jpg' %}" alt="blog post">
                                     </a>
                                     <!-- post cover end -->
                                     <!-- post description -->

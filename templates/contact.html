@@ -1,7 +1,4 @@
 {% extends 'base.html' %}
-
-{% block title %}Contact{% endblock %}
-
 {% block content %}
     {% load static %}
     <div class="transition-fade" id="swup">
@@ -175,28 +172,28 @@
                     <!-- col -->
                     <div class="col-6 col-lg-3">
                         <!-- brand -->
-                        <img class="art-brand" src="img/brands/1.png" alt="brand">
+                        <img class="art-brand" src="{% static 'img/brands/1.png' %}" alt="brand">
                     </div>
                     <!-- col end -->
 
                     <!-- col -->
                     <div class="col-6 col-lg-3">
                         <!-- brand -->
-                        <img class="art-brand" src="img/brands/2.png" alt="brand">
+                        <img class="art-brand" src="{% static 'img/brands/2.png' %}" alt="brand">
                     </div>
                     <!-- col end -->
 
                     <!-- col -->
                     <div class="col-6 col-lg-3">
                         <!-- brand -->
-                        <img class="art-brand" src="img/brands/3.png" alt="brand">
+                        <img class="art-brand" src="{% static 'img/brands/3.png' %}" alt="brand">
                     </div>
                     <!-- col end -->
 
                     <!-- col -->
                     <div class="col-6 col-lg-3">
                         <!-- brand -->
-                        <img class="art-brand" src="img/brands/1.png" alt="brand">
+                        <img class="art-brand" src="{% static 'img/brands/1.png' %}" alt="brand">
                     </div>
                     <!-- col end -->
 
@@ -218,6 +215,7 @@
 
         </div>
         <!-- scroll frame end -->
-
     </div>
+    <div class="current-menu-item" style="display: none; position: fixed"><a>Contact</a></div>
+
 {% endblock %}

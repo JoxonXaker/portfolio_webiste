@@ -19,8 +19,8 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('pages.urls'))
+    path('admin0000001/', admin.site.urls),
+    path('<str:username>/', include('pages.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
